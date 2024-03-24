@@ -225,18 +225,17 @@ int main(void)
         printf("Dataset Size : %d\n", dataSz);
         printf("---------------------------\n");
 
-        extraMemoryAllocated = 0; // Reset extra memory counter
-
+        extraMemoryAllocated = 0; 
         start = clock();
-        selectionSort(pDataCopy, dataSz); // Or insertion
+        selectionSort(pDataCopy, dataSz);
         end = clock();
         cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
         printf("Selection Sort: Time: %f sec, Extra Memory Allocated: %d bytes\n", cpu_time_used, extraMemoryAllocated);
         printArray(pDataCopy, dataSz);
 
-        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); // Restore original data
+        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); 
 
-        extraMemoryAllocated = 0; // Reset extra memory counter
+        extraMemoryAllocated = 0; 
 
         start = clock();
         insertionSort(pDataCopy, dataSz);
@@ -245,9 +244,8 @@ int main(void)
         printf("Insertion Sort: Time: %f sec, Extra Memory Allocated: %d bytes\n", cpu_time_used, extraMemoryAllocated);
         printArray(pDataCopy, dataSz);
 
-        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); // Restore original data
-
-        extraMemoryAllocated = 0; // Reset extra memory counter
+        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); 
+        extraMemoryAllocated = 0; 
 
         start = clock();
         bubbleSort(pDataCopy, dataSz);
@@ -256,9 +254,9 @@ int main(void)
         printf("Bubble Sort: Time: %f sec, Extra Memory Allocated: %d bytes\n", cpu_time_used, extraMemoryAllocated);
         printArray(pDataCopy, dataSz);
 
-        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); // Restore original data
+        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); 
 
-        extraMemoryAllocated = 0; // Reset extra memory counter
+        extraMemoryAllocated = 0; 
 
         start = clock();
         mergeSort(pDataCopy, 0, dataSz - 1);
@@ -267,10 +265,8 @@ int main(void)
         printf("Merge Sort: Time: %f sec, Extra Memory Allocated: %d bytes\n", cpu_time_used, extraMemoryAllocated);
         printArray(pDataCopy, dataSz);
 
-        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); // Restore original data
-
-        extraMemoryAllocated = 0; // Reset extra memory counter
-
+        memcpy(pDataCopy, pDataSrc, sizeof(int) * dataSz); 
+        extraMemoryAllocated = 0; 
         start = clock();
         heapSort(pDataCopy, dataSz);
         end = clock();
